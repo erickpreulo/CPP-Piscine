@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 17:53:31 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/02 22:23:25 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/03 14:32:59 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,12 @@ int		main() {
 	char 	buff[50];
 	int 	i;
 	int		limit;
+	int		size;
 	t_book book;
 
 	std::cin >> buff;
 	i = 0;
-	limit = 0;
+	size = 0;
 	while (strcmp(buff, "EXIT") != 0)
 	{
 		if (i == 8)
@@ -52,26 +53,18 @@ int		main() {
 		if (strcmp(buff, "ADD") == 0) {
 			add_contact(&book, i);
 			i++;
-			limit++;
+			size++;
 		}
+		limit = (size >= 8) ? 8 : size;
 		if (strcmp(buff, "SEARCH") == 0)
 		{
-			if (limit >= 8)
-				for (int j = 0; j < 8; j++) {
-					print_search(book.index[j]);
-					print_search(book.f_name[j]);
-					print_search(book.l_name[j]);
-					print_search(book.n_name[j]);
-					std::cout << std::endl;
-				}
-			else
-				for (int j = 0; j < i; j++) {
-					print_search(book.index[j]);
-					print_search(book.f_name[j]);
-					print_search(book.l_name[j]);
-					print_search(book.n_name[j]);
-					std::cout << std::endl;
-				}
+			for (int j = 0; j < limit; j++) {
+				print_search(book.index[j]);
+				print_search(book.f_name[j]);
+				print_search(book.l_name[j]);
+				print_search(book.n_name[j]);
+				std::cout << std::endl;
+			}
 		}
 		std::cin >> buff;
 	}
