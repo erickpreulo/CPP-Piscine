@@ -6,75 +6,35 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 17:53:31 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/03 20:05:34 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/07 18:53:46 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
-void	print_search(std::string str) {
-	if (str.length() >= 11)
-		std::cout << str.substr(0, 9) + "." << "|";
-	else {
-		for (size_t count = 0; count < (str.length() - 10); count++)
-			str.insert(count, " ");
-		std::cout << str << "|";
-	}
+PhoneBook::PhoneBook() {
+	//std::cout << "Construtor PhoneBook called!!!" << std::endl;
+	_i = 0;
+	_size = 0;
+	return;
 }
 
-void	add_contact(t_book *book, int i) {
-	std::cout << "First Name : ";
-	std::cin >> book->f_name[i];
-	std::cout << "Last Name : ";
-	std::cin >> book->l_name[i];
-	std::cout << "Nickname : ";
-	std::cin >> book->n_name[i];
-	std::cout << "Phone Number : ";
-	std::cin >> book->phone_num[i];
-	std::cout << "Darkest Secret : ";
-	std::cin >> book->dark_secr[i];
-	book->index[i] = std::to_string(i);
+PhoneBook::~PhoneBook() {
+	//std::cout << "Destructor PhoneBook caller!!!" << std::endl;
+	return;
 }
 
-int		main() {
-	char 	buff[50];
-	int 	i;
-	int		limit;
-	int		size;
-	t_book book;
+void	PhoneBook::addContact() {
+	if (_i == 8)
+		_i = 0;
+	_contacts[_i].newContact(_i);
+	_i++;
+	_size++;
+}
 
-	PhoneBook phoneBook;
-	phoneBook.contact[0].name = "Erica";
-
-	phoneBook.addContact();
-	PhoneBook.search();
-
-
-
-	std::cin >> buff;
-	i = 0;
-	size = 0;
-	while (strcmp(buff, "EXIT") != 0)
-	{
-		if (i == 8)
-			i = 0;
-		if (strcmp(buff, "ADD") == 0) {
-			add_contact(&book, i);
-			i++;
-			size++;
-		}
-		limit = (size >= 8) ? 8 : size;
-		if (strcmp(buff, "SEARCH") == 0)
-		{
-			for (int j = 0; j < limit; j++) {
-				print_search(book.index[j]);
-				print_search(book.f_name[j]);
-				print_search(book.l_name[j]);
-				print_search(book.n_name[j]);
-				std::cout << std::endl;
-			}
-		}
-		std::cin >> buff;
+void	PhoneBook::printContacts() {
+	int limit = (_size >= 8) ? 8 : _size;
+	for (int j = 0; j < limit; j++) {
+		_contacts[j].print();
 	}
-	return (0);
 }

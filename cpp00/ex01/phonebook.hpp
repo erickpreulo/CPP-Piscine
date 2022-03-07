@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 19:29:36 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/03 20:04:41 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/07 18:53:16 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,17 @@
 # include "Contact.hpp"
 
 class PhoneBook {
+
 private:
-    int i;
+    int _size;
+    int _i;
+    Contact _contacts[8];
+
 public:
-	Contact	contact[8];
-    void PhoneBook::addContact();
+    PhoneBook();
+    ~PhoneBook();
+    void    addContact();
+    void    printContacts();
 };
 
 #endif

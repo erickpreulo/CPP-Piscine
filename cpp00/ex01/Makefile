@@ -6,17 +6,17 @@
 #    By: egomes <egomes@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/01 17:52:48 by egomes            #+#    #+#              #
-#    Updated: 2022/03/03 21:06:42 by egomes           ###   ########.fr        #
+#    Updated: 2022/03/07 18:43:41 by egomes           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Contact.cpp
+SRC = main.cpp Contact.cpp PhoneBook.cpp
 
 NAME = phonebook
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 $(NAME):
 		@$(CC) $(CFLAGS) $(SRC) -o $(NAME)

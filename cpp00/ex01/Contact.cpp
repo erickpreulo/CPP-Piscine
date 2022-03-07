@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 19:52:14 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/03 21:22:49 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/07 18:55:16 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Contact.hpp"
 
-void    Contact::AddContact() {
+Contact::Contact() {
+	//std::cout << "Construtor Contact called!!!" << std::endl;
+	return;
+}
+
+Contact::~Contact() {
+	//std::cout << "Destructor Contact caller!!!" << std::endl;
+	return;
+}
+
+void    Contact::newContact(int i) {
     std::cout << "First Name : ";
 	std::cin >> f_name;
 	std::cout << "Last Name : ";
@@ -23,17 +33,23 @@ void    Contact::AddContact() {
 	std::cin >> phone_num;
 	std::cout << "Darkest Secret : ";
 	std::cin >> dark_secr;
-	// book->index[i] = std::to_string(i);
+	index = std::to_string(i);
 }
 
-void    Contact::Print() {
-    std::cout << f_name << std::endl;
-    std::cout << l_name << std::endl;
-    std::cout << n_name << std::endl;
-    std::cout << phone_num << std::endl;
+void    Contact::printRef(std::string str) {
+    if (str.length() >= 11)
+		std::cout << str.substr(0, 9) + "." << "|";
+	else {
+		for (size_t count = 0; count < (str.length() - 10); count++)
+			str.insert(count, " ");
+		std::cout << str << "|";
+	}
 }
 
-void    Contact::setName(std::string newName) {
-    if (newName.length() > 3)
-        this->f_name = newName;
+void	Contact::print() {
+	printRef(index);
+	printRef(f_name);
+	printRef(l_name);
+	printRef(n_name);
+	std::cout << std::endl;
 }
