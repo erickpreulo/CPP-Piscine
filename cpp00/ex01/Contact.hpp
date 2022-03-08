@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 20:03:23 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/07 18:39:52 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/08 12:02:27 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CONTACT_HPP
 
 # include <iostream>
-# include <string.h>
+# include <string>
 
 class Contact {
 
