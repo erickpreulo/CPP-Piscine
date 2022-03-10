@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 17:53:31 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/08 12:02:08 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/08 18:12:48 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		main() {
 	PhoneBook pb;
 	std::string buff;
 	
+	std::cin >> buff;
 	while (buff != "EXIT")
 	{
 		if (buff == "ADD")

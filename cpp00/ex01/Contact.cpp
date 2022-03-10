@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 19:52:14 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/07 18:55:16 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/10 09:30:28 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void    Contact::newContact(int i) {
 	std::cin >> phone_num;
 	std::cout << "Darkest Secret : ";
 	std::cin >> dark_secr;
-	index = std::to_string(i);
+	index = i;
 }
 
 void    Contact::printRef(std::string str) {
@@ -47,7 +47,7 @@ void    Contact::printRef(std::string str) {
 }
 
 void	Contact::print() {
-	printRef(index);
+	std::cout << "         " << index << "|";
 	printRef(f_name);
 	printRef(l_name);
 	printRef(n_name);

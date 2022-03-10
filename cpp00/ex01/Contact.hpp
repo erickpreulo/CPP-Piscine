@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 20:03:23 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/08 12:02:27 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/10 09:29:12 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CONTACT_HPP
 
 # include <iostream>
-# include <string>
 
 class Contact {
 
@@ -24,7 +23,7 @@ private:
 	std::string	n_name;
 	std::string	phone_num;
 	std::string	dark_secr;
-	std::string	index;
+	int	index;
     void    printRef(std::string str);
 
 public:
