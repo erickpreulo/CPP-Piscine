@@ -6,11 +6,11 @@
 #    By: egomes <egomes@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 18:27:20 by egomes            #+#    #+#              #
-#    Updated: 2022/03/16 13:54:31 by egomes           ###   ########.fr        #
+#    Updated: 2022/03/16 16:20:53 by egomes           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp StrReplace.cpp Replace.cpp
+SRC = main.cpp StrReplace.cpp
 
 NAME = replace
 

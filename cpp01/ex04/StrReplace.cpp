@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 18:29:29 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/16 14:23:30 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/16 21:06:50 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ StrReplace::~StrReplace() {
 	//std::cout << "destructor" << std::endl;
 }
 
-void	StrReplace::openFile(char *file) {
+void	StrReplace::openFile(std::string file) {
 	std::ifstream t(file);
 	if (!t.is_open()) {
 		std::cout << "Error on opening the file: " << file << std::endl;
@@ -37,13 +37,17 @@ void	StrReplace::openFile(char *file) {
 	t.seekg(0);
 	t.read(&buffer[0], _size);
 	_buffer = buffer;
-	std::cout << _buffer << std::endl;
 	t.close();
 }
 
-void	StrReplace::replaceStr(char *str1, char *str2) {
+void	StrReplace::replaceStr(std::string str1, std::string str2) {
 	_str1 = str1;
 	_str2 = str2;
 
+	char *ptr[100];
+	for (int i = 0; i < 100; i++) {
+		char ptr[i] = std::strtok( (char *)_buffer.c_str(), " ");
+	}
+	std::cout << ptr << std::endl;
 	std::cout << "str1 : " << _str1 << std::endl << "str2 : " << _str2 << std::endl;
 }
