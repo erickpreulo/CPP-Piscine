@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: egomes <egomes@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/01 17:52:48 by egomes            #+#    #+#              #
-#    Updated: 2022/03/14 10:23:42 by egomes           ###   ########.fr        #
+#    Created: 2022/03/15 14:00:32 by egomes            #+#    #+#              #
+#    Updated: 2022/03/15 14:01:15 by egomes           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Contact.cpp PhoneBook.cpp
+SRC = main.cpp
 
-NAME = phonebook
+NAME = BRAIN
 
-CC = C++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
