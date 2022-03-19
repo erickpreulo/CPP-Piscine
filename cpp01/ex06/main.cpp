@@ -5,18 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 18:27:49 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/18 15:41:22 by egomes           ###   ########.fr       */
+/*   Created: 2022/03/18 18:59:38 by egomes            #+#    #+#             */
+/*   Updated: 2022/03/19 17:12:09 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "StrReplace.hpp"
+#include "Harl.hpp"
 
-int		main(int ac, char **av) {
-	if (ac == 4)
-		StrReplace replace(av[1], av[2], av[3]);
-	else
-		std::cout << "Need 3 arguments: [file], [str1] and [str2]" << std::endl;
-	return(0);
+int		main( int ac, char **av) {
+	if (ac != 2) {
+		std::cout << "Need some argument: [DEBUG] || [INFO] || [WARNING] || [ERROR] || [...]" << std::endl;
+		return (0);
+	}
+	Harl p;
+	p.complain(av[1]);
+	return (0);
 }

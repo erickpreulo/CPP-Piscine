@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   .cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <iostream>
 #include "StrReplace.hpp"
 
-int		main(int ac, char **av) {
+int		(int ac, char **av) {
 	if (ac == 4)
 		StrReplace replace(av[1], av[2], av[3]);
 	else

@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 18:29:29 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/16 23:10:38 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/18 17:52:36 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,41 @@ StrReplace::StrReplace() {
 	//std::cout << "constructor" << std::endl;
 }
 
-StrReplace::StrReplace(std::string s1, std::string s2) {
+StrReplace::StrReplace(std::string file, std::string s1, std::string s2)
+:	_file(file),
+	_str1(s1),
+	_str2(s2) {
+	_handlerError = 0;
 	//std::cout << "constructor" << std::endl;
-	_str1 = s1;
-	_str2 = s2;
+	validation();
 }
 
 StrReplace::~StrReplace() {
 	//std::cout << "destructor" << std::endl;
+	if (!_handlerError) {
+		std::cout << "Changes done!" << std::endl;
+		std::cout << "You can see your changes in: [" << _file << ".replace]" << std::endl;
+	}
+	else
+		std::cout << "Bye Bye" << std::endl;
 }
 
-void	StrReplace::openFile(std::string file) {
-	std::ifstream	t(file);
+void	StrReplace::validation() {
+	if (_str1 == "") {
+		std::cout << "I need some character here!!!" << std::endl;
+		_handlerError = 1;
+		return ;
+	}
+	openFile();
+}
+
+void	StrReplace::openFile() {
+	std::ifstream	t(_file);
 	int				size;
 	if (!t.is_open()) {
-		std::cout << "Error on opening the file: " << file << std::endl;
-		exit(1);
+		std::cout << "Error on opening the file: " << _file << std::endl;
+		_handlerError = 1;
+		return ;
 	}
 	t.seekg(0, std::ios::end);
 	size = t.tellg();
@@ -40,14 +59,26 @@ void	StrReplace::openFile(std::string file) {
 	t.read(&buffer[0], size);
 	_buffer = buffer;
 	t.close();
+	replaceStr();
 }
 
 void	StrReplace::replaceStr() {
-	int start;
+	int ptrS;
+	int start = 0;
 
-	while ((start = _buffer.find(_str1)) != -1)
-		_buffer = _buffer.substr(0, start)
-			+ _str2 + _buffer.substr(start
-			+ _str1.length(), _buffer.length() - 1);
-	std::cout << _buffer << std::endl;
+	if (_str1 != _str2) {
+		while ((ptrS = _buffer.find(_str1, start)) != -1) {
+			_buffer = _buffer.substr(0, ptrS)
+				+ _str2
+				+ _buffer.substr(ptrS + _str1.length(), _buffer.length() - 1);
+			start = ptrS + _str2.length(); 
+		}
+	}
+	saveInFile();
+}
+
+void	StrReplace::saveInFile() {
+	std::ofstream out(_file + ".replace");
+	out << _buffer;
+	out.close();
 }
