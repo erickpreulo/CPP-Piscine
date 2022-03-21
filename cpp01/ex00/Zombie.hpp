@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 19:05:51 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/15 13:57:30 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/21 14:56:03 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Zombie {
 		~Zombie();
 		void	announce( void );
 	private:
-		std::string name;
+		std::string _name;
 };
 
 Zombie	*newZombie( std::string name);

@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: egomes <egomes@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/15 14:00:32 by egomes            #+#    #+#              #
-#    Updated: 2022/03/15 14:01:15 by egomes           ###   ########.fr        #
+#    Created: 2022/03/21 15:06:46 by egomes            #+#    #+#              #
+#    Updated: 2022/03/21 15:15:14 by egomes           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = main.cpp
 
-NAME = BRAIN
+NAME = brain
 
-CC = c++
+CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 

@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 20:53:46 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/15 11:34:46 by egomes           ###   ########.fr       */
+/*   Updated: 2022/03/21 14:58:47 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	main() {
 	std::cout << std::endl;
 
 	randomChump("Zombiee");
-
 	std::cout << std::endl;
 
 	delete z2;

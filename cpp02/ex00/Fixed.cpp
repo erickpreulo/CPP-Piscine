@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   .cpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 18:27:49 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/18 15:41:22 by egomes           ###   ########.fr       */
+/*   Created: 2022/03/21 16:00:07 by egomes            #+#    #+#             */
+/*   Updated: 2022/03/21 16:00:07 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "StrReplace.hpp"
+#include "Fixed.hpp"
 
-int		(int ac, char **av) {
-	if (ac == 4)
-		StrReplace replace(av[1], av[2], av[3]);
-	else
-		std::cout << "Need 3 arguments: [file], [str1] and [str2]" << std::endl;
-	return(0);
+Fixed::Fixed() {
+	//std::cout << "constructor" << std::endl;
+}
+
+Fixed::Fixed( std::string name) {
+	//std::cout << "constructor" << std::endl;
+	this->name = name;
+}
+
+Fixed::~Fixed() {
+	//std::cout << "destructor" << std::endl;
 }
