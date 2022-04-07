@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 18:20:57 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/29 21:16:28 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/06 17:04:06 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/06 20:17:20 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
 #include <iostream>
-#include <string>
+#include "AMateria.hpp"
 
-class Fixed {
-	private:
-		int					_fpNbr;
-		static const int	_fracBits = 8;
+class AMateria;
 
+class ICharacter {
 	public:
-		Fixed();
-		Fixed( const Fixed &obj );
-		~Fixed();
-		Fixed &	operator=( const Fixed &obj );
-		int getRawBits( void ) const;
-		void	setRawBits( int const raw );
-
+		virtual ~ICharacter() {};
+		virtual std::string const & getName() const = 0;
+		virtual void	equip( AMateria* m ) = 0;
+		virtual void	unequipe( int idx ) = 0;
+		virtual void	use( int idx, ICharacter& target ) = 0;
 };
 
 #endif

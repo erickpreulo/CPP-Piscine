@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 18:20:57 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/29 21:16:28 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/05 01:56:57 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/05 19:02:06 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-#include <iostream>
-#include <string>
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class Fixed {
+class DiamondTrap : public ScavTrap, public FragTrap {
 	private:
-		int					_fpNbr;
-		static const int	_fracBits = 8;
-
+		std::string _name;
 	public:
-		Fixed();
-		Fixed( const Fixed &obj );
-		~Fixed();
-		Fixed &	operator=( const Fixed &obj );
-		int getRawBits( void ) const;
-		void	setRawBits( int const raw );
-
+		DiamondTrap();
+		DiamondTrap( std::string name );
+		DiamondTrap( const DiamondTrap &obj );
+		DiamondTrap &	operator= ( const DiamondTrap &obj );
+		~DiamondTrap();
+		void	whoAmI();
 };
 
 #endif

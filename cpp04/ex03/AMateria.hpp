@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 18:20:57 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/29 21:16:28 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/06 16:56:04 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/06 20:16:57 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 #include <iostream>
-#include <string>
+#include "ICharacter.hpp"
 
-class Fixed {
-	private:
-		int					_fpNbr;
-		static const int	_fracBits = 8;
+class ICharacter;
 
+class AMateria {
+	protected:
+		std::string const _type;
 	public:
-		Fixed();
-		Fixed( const Fixed &obj );
-		~Fixed();
-		Fixed &	operator=( const Fixed &obj );
-		int getRawBits( void ) const;
-		void	setRawBits( int const raw );
+		AMateria( std::string const & type );
+		AMateria( const AMateria &obj );
+		AMateria &	operator= ( const AMateria &obj );
+		virtual ~AMateria();
 
+		std::string	const	getType() const;
+		virtual	AMateria* clone() const = 0;
+		virtual void	use( ICharacter& type );
 };
 
 #endif

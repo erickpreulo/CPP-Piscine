@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 18:20:57 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/29 21:16:28 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/05 19:59:45 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/05 21:06:55 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
-#include <string>
 
-class Fixed {
-	private:
-		int					_fpNbr;
-		static const int	_fracBits = 8;
+class WrongAnimal {
+	protected:
+		std::string _type;
 
 	public:
-		Fixed();
-		Fixed( const Fixed &obj );
-		~Fixed();
-		Fixed &	operator=( const Fixed &obj );
-		int getRawBits( void ) const;
-		void	setRawBits( int const raw );
-
+		WrongAnimal();
+		WrongAnimal( const WrongAnimal &obj );
+		WrongAnimal &	operator= ( const WrongAnimal &obj );
+		~WrongAnimal();
+		void	makeSound() const ;
+		std::string	getType() const ;
 };
 
 #endif

@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 18:20:57 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/29 21:16:28 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/05 19:49:01 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/05 20:50:05 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 #include <iostream>
-#include <string>
+#include "Animal.hpp"
 
-class Fixed {
+class Cat : public Animal {
 	private:
-		int					_fpNbr;
-		static const int	_fracBits = 8;
 
 	public:
-		Fixed();
-		Fixed( const Fixed &obj );
-		~Fixed();
-		Fixed &	operator=( const Fixed &obj );
-		int getRawBits( void ) const;
-		void	setRawBits( int const raw );
-
+		Cat();
+		Cat( const Cat &obj );
+		Cat &	operator= ( const Cat &obj );
+		~Cat();
+		void	makeSound() const ;
+		std::string	getType() const ;
 };
 
 #endif

@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 18:20:57 by egomes            #+#    #+#             */
-/*   Updated: 2022/03/29 21:16:28 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/05 19:59:15 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/05 21:01:20 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 #include <iostream>
-#include <string>
+#include "WrongAnimal.hpp"
 
-class Fixed {
+class WrongCat : public WrongAnimal {
 	private:
-		int					_fpNbr;
-		static const int	_fracBits = 8;
 
 	public:
-		Fixed();
-		Fixed( const Fixed &obj );
-		~Fixed();
-		Fixed &	operator=( const Fixed &obj );
-		int getRawBits( void ) const;
-		void	setRawBits( int const raw );
-
+		WrongCat();
+		WrongCat( const WrongCat &obj );
+		WrongCat &	operator= ( const WrongCat &obj );
+		~WrongCat();
+		void	makeSound() const ;
+		std::string	getType() const ;
 };
 
 #endif
