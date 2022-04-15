@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 18:05:09 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/06 20:19:49 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/15 10:28:39 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/15 14:35:18 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ Cure::~Cure() {
 }
 
 AMateria*	Cure::clone() const {
-	AMateria m* = new Cure();
-	return(m);
+	return (new Cure(*this));
 }
 
-void	Cure::use( ICharacter& type ) {
-	std::cout << "'* heals " << type << " wounds *'" << std::endl;
+void	Cure::use(ICharacter& target) {
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

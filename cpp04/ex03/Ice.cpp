@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 18:05:01 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/06 20:19:59 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/15 10:22:54 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/15 14:35:57 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,10 @@ Ice::~Ice() {
 	std::cout << "Destructor Ice called" << std::endl;
 }
 
-AMateria*	Ice::clone() const {
-	AMateria *m = new Ice();
-	return(m);
+AMateria* Ice::clone() const {
+	return (new Ice(*this));
 }
 
-void	Ice::use( ICharacter& type) {
-	std::cout << "'* shoots an ice bolt at " << type << " *'" << std::endl;
+void	Ice::use(ICharacter& target) {
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

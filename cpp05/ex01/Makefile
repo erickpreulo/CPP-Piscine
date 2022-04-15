@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: egomes <egomes@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/06 16:26:42 by egomes            #+#    #+#              #
-#    Updated: 2022/04/15 08:41:17 by egomes           ###   ########.fr        #
+#    Created: 2022/04/15 14:22:01 by egomes            #+#    #+#              #
+#    Updated: 2022/04/15 16:36:41 by egomes           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp MateriaSource.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 
-NAME = interface
+NAME = form
 
 CC = c++
 

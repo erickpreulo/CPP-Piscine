@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: egomes <egomes@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/06 16:26:42 by egomes            #+#    #+#              #
-#    Updated: 2022/04/15 08:41:17 by egomes           ###   ########.fr        #
+#    Created: 2022/04/15 14:22:30 by egomes            #+#    #+#              #
+#    Updated: 2022/04/15 14:22:36 by egomes           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp MateriaSource.cpp
+SRC = main.cpp
 
 NAME = interface
 

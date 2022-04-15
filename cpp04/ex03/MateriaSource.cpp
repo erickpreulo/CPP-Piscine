@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 17:50:11 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/06 19:36:42 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/15 11:17:30 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/15 14:35:28 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,8 @@
 
 MateriaSource::MateriaSource() {
 	std::cout << "Default MateriaSource constructor called" << std::endl;
-	_name = "MateriaSource";
-	_idx = 0;
 	for (int i = 0; i < SIZE; i++)
-		_m[i] = 0;
-}
-
-MateriaSource::MateriaSource( std::string name ) {
-	std::cout << "Default MateriaSource constructor called" << std::endl;
-	_name = name;
-	_idx = 0;
-	for (int i = 0; i < SIZE; i++)
-		_m[i] = 0;
+		_templates[i] = NULL;
 }
 
 MateriaSource::MateriaSource( const MateriaSource &obj ) {
@@ -35,30 +25,28 @@ MateriaSource::MateriaSource( const MateriaSource &obj ) {
 
 MateriaSource &	MateriaSource::operator= ( const MateriaSource &obj ) {
 	std::cout << "Copy MateriaSource assigment operator called" << std::endl;
-	for (int i = 0; i <= _idx; i++)
-		delete _m[i];
-	_name = obj._name;
-	_idx = obj._idx;
-	for ( int i = 0; i <= _idx; i++)
-		_m[i] = obj._m[i];
+	for (int i = 0; i < SIZE; i++)
+		_templates[i] = obj._templates[i];
 	return(*this);
 }
 
 MateriaSource::~MateriaSource() {
 	std::cout << "Destructor MateriaSource called" << std::endl;
-	for (int i = 0; i <= _idx; i++)
-		delete _m[i];
+	for (int i = 0; i < SIZE; i++)
+		if (_templates[i])
+			delete _templates[i];
 }
 
-void	MateriaSource::learnMateria( AMateria* m) {
-	if (_idx >= SIZE)
-		return;
-	_m[_idx] = m;
-	_idx++;
+void	MateriaSource::learnMateria(AMateria* m) {
+	for (int i = 0; i < SIZE; i++)
+		if (!_templates[i]) {
+			_templates[i] = m;
+			break ;
+		}
 }
-
-AMateria*	MateriaSource::createMateria( std::string const & type ) {
-	if (_m[_idx]->getType() == type)
-		return(_m[_idx]->clone());
+AMateria* MateriaSource::createMateria(std::string const & type) {
+	for (int i = (SIZE - 1); i >= 0; i--)
+		if (_templates[i] && _templates[i]->getType() == type)
+			return (_templates[i]->clone());
 	return (0);
 }

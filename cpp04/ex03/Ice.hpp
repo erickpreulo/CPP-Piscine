@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 18:05:01 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/06 20:22:18 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/15 10:22:54 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/15 10:28:36 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Ice : public AMateria {
 		Ice( const Ice &obj );
 		Ice &	operator= ( const Ice &obj );
 		~Ice();
-		AMateria*	clone() const ;
-		void	use( ICharacter& type );
+		AMateria* clone() const;
+		void	use(ICharacter& target);
 };
 
 #endif

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 18:05:09 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/06 20:22:24 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/15 10:28:39 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/15 10:33:47 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include "AMateria.hpp"
 
-class Cure : public AMateria {
+class Cure : public AMateria{
 	private:
 
 	public:
@@ -24,8 +24,8 @@ class Cure : public AMateria {
 		Cure( const Cure &obj );
 		Cure &	operator= ( const Cure &obj );
 		~Cure();
-		AMateria*	clone() const ;
-		void	use( ICharacter& type );
+		AMateria* clone() const;
+		void	use(ICharacter& target);
 };
 
 #endif

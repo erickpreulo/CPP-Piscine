@@ -5,12 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 16:56:04 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/06 20:23:55 by egomes           ###   ########.fr       */
+/*   Created: 2022/04/15 10:12:46 by egomes            #+#    #+#             */
+/*   Updated: 2022/04/15 14:33:29 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+
+AMateria::AMateria() {
+	std::cout << "Default AMateria constructor called" << std::endl;
+	_type = "unknown";
+}
 
 AMateria::AMateria( std::string const & type )
 : _type(type) {
@@ -32,10 +37,10 @@ AMateria::~AMateria() {
 	std::cout << "Destructor AMateria called" << std::endl;
 }
 
-std::string const AMateria::getType() const {
+std::string	const	&	AMateria::getType() const {
 	return(_type);
 }
 
-void	AMateria::use( ICharacter& type ) {
-	std::cout << "'* AMateria use is on " << type.getName() << " *'" <<  std::endl;
+void	AMateria::use(ICharacter& target) {
+	std::cout << "You are in a wrong place " << target.getName() << std::endl;
 }

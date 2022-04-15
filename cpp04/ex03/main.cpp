@@ -6,18 +6,15 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 16:51:34 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/06 19:45:39 by egomes           ###   ########.fr       */
+/*   Updated: 2022/04/15 11:35:13 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
-#include "ICharacter.hpp"
-#include "Character.hpp"
-#include "AMateria.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include "Character.hpp"
 
 int main()
 {
@@ -41,5 +38,6 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+
 	return 0;
 }
