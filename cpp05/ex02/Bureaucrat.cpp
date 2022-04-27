@@ -6,11 +6,13 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 14:23:34 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/26 17:05:36 by egomes           ###   ########.fr       */
+/*   Updated: 2022/04/26 17:05:34 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#define HIGHG 1
+#define LOWG 150
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 :_name(name), _grade(grade) {
@@ -59,6 +61,16 @@ const char*	Bureaucrat::GradeTooHighException::what() const throw () {
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw () {
 	return("Grade too low");
+}
+
+void	Bureaucrat::executeForm(Form const & form) {
+	try {
+		form.execute(*this);
+		std::cout << getName() << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << getName() << " can't execute " << form.getName() << " because of " << e.what() << std::endl;
+	}
 }
 
 std::ostream & operator<< (std::ostream & o, Bureaucrat const & bureaucrat) {

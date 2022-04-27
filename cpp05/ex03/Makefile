@@ -6,13 +6,13 @@
 #    By: egomes <egomes@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/15 14:22:30 by egomes            #+#    #+#              #
-#    Updated: 2022/04/15 14:22:36 by egomes           ###   ########.fr        #
+#    Updated: 2022/04/27 17:08:00 by egomes           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp Intern.cpp
 
-NAME = interface
+NAME = intern
 
 CC = c++
 

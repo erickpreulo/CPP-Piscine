@@ -6,14 +6,16 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 16:37:27 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/26 17:04:45 by egomes           ###   ########.fr       */
+/*   Updated: 2022/04/26 14:36:54 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#define HIGHG 1
+#define LOWG 150
 
 Form::Form(const std::string &name, const int &gradeSign, const int &gradeExecute)
-: _name(name), _gradeSign(gradeSign), _gradeExecute(gradeExecute) {
+: _name(name), _gradeSign(gradeSign), _gradeExecute(gradeExecute), _signed(false) {
 	std::cout << "Default Form constructor called" << std::endl;
 	if (_gradeSign > LOWG || _gradeExecute > LOWG)
 		throw Form::GradeTooLowException();
@@ -67,10 +69,26 @@ const char* Form::GradeTooLowException::what() const throw () {
 	return ("Grade too low to be signed!");
 }
 
+const char* Form::GradeTooLowToExecute::what() const throw () {
+	return ("Grade too low to execute!");
+}
+
+const char* Form::GradeNotSigned::what() const throw () {
+	return ("Grade need to be signed!");
+}
+
 std::ostream & operator<< (std::ostream & o, Form const & form) {
 	std::string sign = form.getSigned() ? "Yes" : "Now";
 
 	o << form.getName() << ", Form grade sign " << form.getGradeSign() << ", Form grade execute " << form.getGradeExecute()
 		<< ", its signed? " << sign << ".";
 	return (o);
+}
+
+void	Form::execute(Bureaucrat const & executor) const {
+	if (executor.getGrade() > getGradeExecute())
+		throw Form::GradeTooLowToExecute();
+	if (!getSigned())
+		throw Form::GradeNotSigned();
+	executeAction();
 }
