@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 17:34:08 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/28 00:04:42 by egomes           ###   ########.fr       */
+/*   Updated: 2022/04/28 12:48:26 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,23 +35,40 @@ Intern::~Intern() {
 	std::cout << "Destructor Intern called" << std::endl;
 }
 
-Form	*Intern::makeForm( std::string name, std::string target ) {
-	std::string forms[ALLFORMS] = {SHRUBBERY, ROBOTOMY, PREDIDENTIAL};
+Form *Intern::MakePresidentialPardonForm(const std::string &target)
+{
+	return (new PresidentialPardonForm(target));
+}
+
+Form *Intern::MakeRobotomyRequestForm(const std::string &target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
+Form *Intern::MakeShrubberyCreationForm(const std::string &target)
+{
+	return (new ShrubberyCreationForm(target));
+}
+
+Form	*Intern::makeForm( const std::string name, const std::string target ) {
+	Form *(Intern::*arr_functions[])(const std::string &target) = {
+		&Intern::MakePresidentialPardonForm,
+		&Intern::MakeRobotomyRequestForm,
+		&Intern::MakePresidentialPardonForm
+	};
+	std::string forms[ALLFORMS] = {PREDIDENTIAL, ROBOTOMY, SHRUBBERY};
+
 	int i = -1;
 	while (++i != ALLFORMS)
-		if (forms[i] == name)
-			break;
-	switch (i)
-	{
+		if (forms[i] == name) {
+			std::cout << "Intern creates " << name << std::endl; break; }
+	switch (i) {
 		case (0):
-			std::cout << "Intern creates " << name << std::endl;
-			return (new ShrubberyCreationForm(target));
+			return ((this->*arr_functions[0])(target));
 		case (1):
-			std::cout << "Intern creates " << name << std::endl;
-			return (new RobotomyRequestForm(target));
+			return ((this->*arr_functions[1])(target));
 		case (2):
-			std::cout << "Intern creates " << name << std::endl;
-			return (new PresidentialPardonForm(target));
+			return ((this->*arr_functions[2])(target));
 		default:
 			break;
 	}

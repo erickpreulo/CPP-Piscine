@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 17:34:08 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/27 22:59:58 by egomes           ###   ########.fr       */
+/*   Updated: 2022/04/28 12:47:36 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@ class Form;
 
 class Intern {
 	private:
-
+		Form* MakePresidentialPardonForm(const std::string &target);
+		Form* MakeRobotomyRequestForm(const std::string &target);
+		Form* MakeShrubberyCreationForm(const std::string &target);
 	public:
 		Intern();
 		Intern( const Intern &obj );
 		Intern &	operator= ( const Intern &obj );
 		~Intern();
-		Form	*makeForm( std::string, std::string );
+		Form	*makeForm( const std::string, const std::string );
 };
 
 #endif
