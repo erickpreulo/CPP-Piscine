@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 06:29:31 by egomes            #+#    #+#             */
-/*   Updated: 2022/04/19 22:43:05 by egomes           ###   ########.fr       */
+/*   Updated: 2022/04/29 23:02:35 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ std::string	RobotomyRequestForm::getTarget() const {
 }
 
 void	RobotomyRequestForm::executeAction() const {
+	std::srand(time(0));
 	bool success = std::rand() % 2;
 	
 	std::cout << "Beedo boop bop beeda beep boop lop bleeda bee bop bleeda booop bopp beedlaboop boooopppppp!!!!!!" << std::endl;
