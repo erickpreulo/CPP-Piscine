@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 19:06:13 by egomes            #+#    #+#             */
-/*   Updated: 2022/05/03 21:26:05 by egomes           ###   ########.fr       */
+/*   Updated: 2022/05/05 09:51:45 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,12 +105,8 @@ bool	Scalar::isPseudoF() const {
 }
 
 void	Scalar::getType() {
-	if (isChar())
-		_type = _input[0];
-	else if (isInt() || isFloat() || isDouble())
+	if (isChar() || isInt() || isFloat() || isDouble())
 		sscanf(_input.c_str(), "%lf", &_type);
-
-	std::cout << _type << std::endl;
 }
 
 
