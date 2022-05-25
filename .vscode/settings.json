@@ -1,6 +1,7 @@
 {
 	"C_Cpp.errorSquiggles": "Disabled",
 	"files.associations": {
+		"**/*.tt/**/*.ts": "plaintext",
 		"iosfwd": "cpp",
 		"__bit_reference": "cpp",
 		"__config": "cpp",
@@ -65,6 +66,8 @@
 		"fstream": "cpp",
 		"iomanip": "cpp",
 		"stack": "cpp",
-		"filesystem": "cpp"
+		"filesystem": "cpp",
+		"*.tcc": "cpp",
+		"clocale": "cpp"
 	}
 }

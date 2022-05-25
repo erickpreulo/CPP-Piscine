@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/ctw02194_wls/42/cpp/cpp08'
+make: Leaving directory '/home/ctw02194_wls/42/cpp/cpp08'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

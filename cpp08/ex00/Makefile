@@ -10,16 +10,16 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Array.tpp
+SRC = main.cpp
 
-NAME = array
+NAME = eazyfind
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 $(NAME):
-		@$(CC) $(CFLAGS)a $(SRC) -o $(NAME)
+		@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 all: 	$(NAME)
 

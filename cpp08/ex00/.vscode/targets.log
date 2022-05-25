@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 24 12:37:33 2022
+# Make data base, printed on Tue May 24 15:54:41 2022
 
 # Variables
 
@@ -20,6 +18,8 @@ make: *** No rule to make target 'all'.  Stop.
 WSLENV = ELECTRON_RUN_AS_NODE/w:
 # default
 .SHELLFLAGS := -c
+# makefile (from 'Makefile', line 13)
+SRC = main.cpp
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -29,15 +29,17 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /home/ctw02194_wls/42/cpp
+CURDIR := /home/ctw02194_wls/42/cpp/cpp08/ex00
 # makefile
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
 _ = /mnt/c/Users/ctw02194/AppData/Local/Programs/Microsoft VS Code/bin/code
-# makefile
-MAKEFILE_LIST := 
+# makefile (from 'Makefile', line 19)
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
@@ -55,7 +57,7 @@ PATH = /home/ctw02194_wls/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-b1293cd7-567c-42fa-82a8-03213027fd23.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ecaf5914-cb10-461d-89f5-cb17e42cbd7d.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -65,7 +67,7 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /home/ctw02194_wls/42/cpp
+PWD = /home/ctw02194_wls/42/cpp/cpp08/ex00
 # default
 .LOADED := 
 # environment
@@ -79,7 +81,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = ctw02194_wls
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -92,14 +94,16 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 1
+# makefile (from 'Makefile', line 17)
+CC = c++
 # default
 MAKE_VERSION := 4.2.1
 # environment
 USER = ctw02194_wls
 # makefile
-.DEFAULT_GOAL := 
-# environment
-NAME = Code
+.DEFAULT_GOAL := eazyfind
+# makefile (from 'Makefile', line 15)
+NAME = eazyfind
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -146,10 +150,8 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=4/90=4%
+# Load=70/1024=7%, Rehash=0, Collisions=4/105=4%
 
 # Pattern-specific Variable Values
 
@@ -157,9 +159,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 2064, inode 2793): 14 files, no impossibilities.
+# . (device 2064, inode 52893): 6 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -167,26 +169,59 @@ MOTD_SHOWN = update-motd
 
 # Files
 
-# Not a target:
-all:
+all: eazyfind
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-05-24 12:37:28.156884254
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
 
-# Not a target:
-makefile:
-#  Implicit rule search has been done.
+fclean: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+eazyfind:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
-#  Failed to be updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := eazyfind
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/15=20%
+#  recipe to execute (from 'Makefile', line 22):
+		@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 # Not a target:
 .DEFAULT:
@@ -194,27 +229,32 @@ makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-GNUmakefile:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+re: fclean all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 27):
+		@rm -rf $(NAME)
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# Load=8/1024=1%, Rehash=0, Collisions=0/24=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 167 B / avg = 7 B
-# current buf: size = 8162 B / used = 167 B / count = 22 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 15 / storage = 124 B / avg = 8 B
+# current buf: size = 8162 B / used = 124 B / count = 15 / avg = 8 B
 
-# strcache performance: lookups = 25 / hit rate = 12%
+# strcache performance: lookups = 30 / hit rate = 50%
 # hash-table stats:
-# Load=22/8192=0%, Rehash=0, Collisions=1/25=4%
-# Finished Make data base on Tue May 24 12:37:33 2022
+# Load=15/8192=0%, Rehash=0, Collisions=1/30=3%
+# Finished Make data base on Tue May 24 15:54:41 2022
 
  
