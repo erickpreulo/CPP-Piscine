@@ -48,7 +48,7 @@ void	Span::addNumber( std::vector<int>::iterator begin, std::vector<int>::iterat
 
 int		Span::shortestSpan() {
 	std::vector<int>::iterator it;
-	int		shortest = _limit;
+	int		shortest = INT_MAX;
 
 	if (_vector.size() < 2)
 		throw Span::NotEnoughtNumbers();
